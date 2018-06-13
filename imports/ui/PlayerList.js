@@ -6,7 +6,11 @@ import PropTypes from 'prop-types';
 export default class PlayerList extends React.Component {
     renderPlayers() {
         if(this.props.players.length === 0 ){
-            return <p>Add you first player to get started</p>
+            return (
+                <div className="item">
+                    <p>Add you first player to get started</p>
+                </div>
+            );
         }else {
             return this.props.players.map((player) => {
                 return <Player key={player._id} player={player} />;
@@ -22,8 +26,6 @@ export default class PlayerList extends React.Component {
     }
 }
 
-{/**
-    PlayerList.propTypes = {
-      players: React.PropTypes.array.isRequired
-    }
-**/}
+PlayerList.propTypes = {
+    players: PropTypes.array.isRequired
+}
