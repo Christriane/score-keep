@@ -5,14 +5,15 @@ import {Tracker} from 'meteor/tracker';
 
 import App from '../imports/ui/App';
 
-import {Players} from '../imports/api/players';
+import {Players, calculatePlayerPositions} from '../imports/api/players';
 
 
 Meteor.startup(() => {
   Tracker.autorun(() => {
     let players = Players.find({}, {sort: {score: -1}}).fetch();
-    const title = 'Score Keep';
-    ReactDOM.render(<App title={title} players={players} />, document.getElementById('app'));
+    let positionedPlayers = calculatePlayerPositions(players);
+    const title = 'Score Keep', subtitle= 'Developed by Christriane Marquez';
+    ReactDOM.render(<App title={title} subtitle={subtitle} players={positionedPlayers} />, document.getElementById('app'));
   });
 });
 
