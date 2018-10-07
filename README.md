@@ -1,7 +1,7 @@
 # score-keep
 Developed as part of a project from Andrew Mead's Meteor/React.js Course on Udemy.
 
-Score Keep is a simple app that keeps track any number of player's score. Can be used for any game that requires score to be tracked. The app supports adding and subtracking points.
+Score Keep is a simple app that keeps track of any number of player's score. Can be used for any game that requires score to be tracked. The app supports adding and subtracking points.
 
 ## Getting Started
 
